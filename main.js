@@ -9,44 +9,66 @@ formControl.addEventListener('submit', (e)=>{
     
     if(year!=""&&month!=""&&day!=""){
         let todaysDate= new Date()
-        let usersDate = new Date(year,month+1,day)
+        let usersDate = new Date(year,month-1,day)
         let maxDay = new Date(year,month,0)
-
+        console.log(usersDate.getDate())
+        
         let outputYear = (todaysDate.getFullYear()-usersDate.getFullYear())
-        let outputMonth = ((todaysDate.getMonth()+1)-usersDate.getMonth())
+        let outputMonth = ((todaysDate.getMonth()-1)-usersDate.getMonth()+1)
         let outputDay = (todaysDate.getDate()-usersDate.getDate())
-    
-        console.log(usersDate.getMonth()-1)
+        
+        console.log(usersDate.getMonth())
         console.log(day,maxDay.getDate())
         console.log(todaysDate.getFullYear())
-
-        if(day>maxDay.getDate()){
-            document.getElementById("dayError").innerHTML="Must be a valid Day"
-            document.getElementById("dayError").style.display="block"
+            if(day>maxDay.getDate()&&(month-1)>12&&year>todaysDate.getFullYear()){
+                document.getElementById("dayError").innerHTML="Must be a valid Day"
+                document.getElementById("dayError").style.display="block"
+                document.getElementById("monthError").innerHTML="Must be a valid Month"
+                document.getElementById("monthError").style.display="block"
+                document.getElementById("yearError").innerHTML="Must be a valid Year"
+                document.getElementById("yearError").style.display="block"
+            }
+       
+            while(true){
+                if(day>maxDay.getDate()){
+                    document.getElementById("dayError").innerHTML="Must be a valid Date"
+                    document.getElementById("dayError").style.display="block"
+                    document.querySelectorAll('.label').forEach((el)=>{
+                        el.style.color='hsl(0, 100%, 67%)'
+                    })
+                    for(let i=0; i<document.getElementsByTagName('input').length; i++){
+                        document.getElementsByTagName('input')[i].style.border='1px solid hsl(0, 100%, 67%)'
+                    }
+                    break
+                } 
+                else if((month-1)>12){
+                    document.getElementById("monthError").innerHTML="Must be a valid Date"
+                    document.getElementById("monthError").style.display="block"
+                    break
+                }
+                
+                else if(year>todaysDate.getFullYear()){
+                    document.getElementById("yearError").innerHTML="Must be a valid Date"
+                    document.getElementById("yearError").style.display="block"
+                    break
+                }
+                else{
+                    document.querySelector(".years").innerHTML= outputYear;
+                    document.querySelector(".months").innerHTML= outputMonth;
+                    document.querySelector(".days").innerHTML= outputDay;
             
-        } 
-        if((month-1)>12){
-            document.getElementById("monthError").innerHTML="Must be a valid Month"
-            document.getElementById("monthError").style.display="block"
+                    document.querySelectorAll('.label').forEach((el)=>{
+                        el.style.color='initial'
+                    })
+                    document.querySelectorAll('.ErrorMessage').forEach((el)=>{
+                        el.style.display="none"
+                    })
+                    break
+                }
+            }
+            
+            
         }
-           
-        if(year>todaysDate.getFullYear()){
-            document.getElementById("yearError").innerHTML="Must be a valid Year"
-            document.getElementById("yearError").style.display="block"
-        }
-        else{
-            document.querySelector(".years").innerHTML= outputYear;
-        document.querySelector(".months").innerHTML= outputMonth;
-        document.querySelector(".days").innerHTML= outputDay;
-
-        document.querySelectorAll('.label').forEach((el)=>{
-            el.style.color='initial'
-        })
-        document.querySelectorAll('.ErrorMessage').forEach((el)=>{
-            el.style.display="none"
-        })
-        }
-    }
     else{
         document.querySelectorAll('.label').forEach((el)=>{
             el.style.color='hsl(0, 100%, 67%)'

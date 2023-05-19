@@ -14,21 +14,23 @@
             <form action="" class="form-control">
                 <div>
                     <label class="label" for="day">Day</label><br>
-                    <input type="text" inputmode="numeric" pattern="[0-9]+" maxlength="2" placeholder="DD" class="day"><br>
-                    <p class="ErrorMessage" id="dayError">This field is required</p>
+                    <input type="text" inputmode="numeric" pattern="[0-9]+" maxlength="2" placeholder="DD" id="allInput" class="day"><br>
                 </div>
                 <div>
                     <label class="label" for="month">Month</label><br>
-                    <input type="text"  inputmode='numeric' pattern="[0-9]+" maxlength="2" placeholder="MM" class="month">
-                    <p class="ErrorMessage" id="monthError">This field is required</p>
+                    <input type="text"  inputmode='numeric' pattern="[0-9]+" maxlength="2" placeholder="MM" id="allInput" class="month">
                 </div>
                 <div>
                     <label class="label" for="year">Year</label><br>
-                    <input type="text"  inputmode="numeric" pattern="[0-9]+" maxlength="4" placeholder="YYYY" class="year">
-                    <p class="ErrorMessage" id="yearError">This field is required</p>
+                    <input type="text"  inputmode="numeric" pattern="[0-9]+" maxlength="4" placeholder="YYYY" id="allInput" class="year">
                 </div>
                 <button type="submit"><img src="images/icon-arrow.svg" alt="icon-arrow" class="icon-arrow"></button>
             </form>
+            <div class="error-holder">
+                <span class="ErrorMessage" id="dayError">This field is required</span>
+                <span class="ErrorMessage" id="monthError">This field is required</span>
+                <span class="ErrorMessage" id="yearError">This field is required</span>
+            </div>
             <hr>
             
         </div>
