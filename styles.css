@@ -72,7 +72,7 @@ hr{
 .card-body .display-space span{
     color: hsl(259, 100%, 65%);
 }
-@media (width<400px){
+@media (max-width:400px){
     .card-body{
         background-color: hsl(0, 0%, 100%);
         width:342px;
