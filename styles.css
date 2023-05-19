@@ -21,6 +21,7 @@ body{
 .card-body div form{
     display: flex;
     align-items: center;
+    
 }
 .card-body div form div label{
     font-size: .7rem;
@@ -34,33 +35,51 @@ input{
     width:145px;
     height:63px;
     border:1px solid hsl(0, 0%, 88%);
-    border-radius: 6px;
+    border-radius: 7px;
+    font-family: "Poppins", sans-serif;
     margin-right:1.8rem;
     font-size: 2rem;
     font-weight: 700;
     padding-inline: 1.2rem;
     box-sizing: border-box;
+    caret-color: hsl(259, 100%, 65%);
+    
 }
 input:focus{
-    outline-color: hsl(259, 100%, 65%);
+    outline-color: hsla(259, 100%, 65%, 0.744);
+}
+.ErrorMessage{
+    display:none;
+    font-size: .8rem;
+    font-style: italic;
+    color: hsl(0, 100%, 67%);
+    margin-top: .3rem;
 }
 button{
     position: absolute;
     right:3rem;
+    top:10.5rem;
     background-color: hsl(259, 100%, 65%);
     border-radius: 50%;
     padding:15px;
     border:none;
+    z-index: 2;
+    transition:.3s ease;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #000;
+    transform: scale(1.05);
 }
 
 hr{
-    width: 76%;
+    width: 80%;
     border:1px solid hsl(0, 0%, 90%);
     position: absolute;
-    top:11rem;
+    top:13rem;
 }
 .card-body .display-space{
-    margin-top:6rem;
+    margin-top:5.5rem;
     font-weight: 800;
     letter-spacing:-4px;
 }
@@ -79,7 +98,7 @@ hr{
         height:486px;
         padding:1.8rem;
     }
-    .input-holder{
+    form{
         margin-top: 7px;
     }
     input{
@@ -87,20 +106,21 @@ hr{
         height:54px;
         margin-right:1rem;
         font-size: 1.2rem;
+        padding-inline: .6rem;
     }
     .card-body .display-space{
-        margin-top:8rem;
+        margin-top:7.5rem;
         letter-spacing:-2px;
     }
     .card-body .display-space h1{
-        font-size: 3.8rem;
+        font-size: 3.5rem;
         font-style: italic;
         line-height: 4rem;
     }
     button{
-        right:8rem;
-        top:8.5rem;
-        padding:25px;
+        right:8.5rem;
+        top:9.5rem;
+        padding:15px;
     }
     button img{
         width:30px;
@@ -108,6 +128,9 @@ hr{
     }
     hr{
         width: 85%;
-        
+        top: 11.5rem
+    }
+    .ErrorMessage{
+        font-size: .5rem;
     }
 }

@@ -5,34 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Age-calculator</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="card-body">
         <div>
-            <form class="input-holder">
+            <form action="" class="form-control">
                 <div>
-                    <label for="day">Day</label><br>
-                    <input type="text" inputmode="numeric" pattern="[0-9]" maxlength="2" class="day">
+                    <label class="label" for="day">Day</label><br>
+                    <input type="text" inputmode="numeric" pattern="[0-9]+" maxlength="2" placeholder="DD" class="day"><br>
+                    <p class="ErrorMessage" id="dayError">This field is required</p>
                 </div>
                 <div>
-                    <label for="month">Month</label><br>
-                    <input type="text" inputmode='numeric' pattern="[0-9]" maxlength="2"class="month">
+                    <label class="label" for="month">Month</label><br>
+                    <input type="text"  inputmode='numeric' pattern="[0-9]+" maxlength="2" placeholder="MM" class="month">
+                    <p class="ErrorMessage" id="monthError">This field is required</p>
                 </div>
                 <div>
-                    <label for="year">Year</label><br>
-                    <input type="text" inputmode="numeric" pattern="[0-9]" maxlength="4" class="year">
+                    <label class="label" for="year">Year</label><br>
+                    <input type="text"  inputmode="numeric" pattern="[0-9]+" maxlength="4" placeholder="YYYY" class="year">
+                    <p class="ErrorMessage" id="yearError">This field is required</p>
                 </div>
+                <button type="submit"><img src="images/icon-arrow.svg" alt="icon-arrow" class="icon-arrow"></button>
             </form>
             <hr>
-            <button><img src="images/icon-arrow.svg" alt="icon-arrow" class="icon-arrow"></button>
+            
         </div>
         <div class="display-space">
-            <h1 class="years"><span>38</span> years</h1>
-            <h1 class="months"><span>3</span> months</h1>
-            <h1 class="days"><span>26</span> days</h1>
+            <h1 ><span class="years">--</span> years</h1>
+            <h1 ><span class="months">--</span> months</h1>
+            <h1 ><span class="days">--</span> days</h1>
         </div>
     </div>
+    <script src="main.js"></script>
 </body>
 </html>
