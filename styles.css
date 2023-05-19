@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap');
+*{
+    margin:0;
+    box-sizing: border-box;
+    padding:0;
+}
+body{
+    background-color:hsl(0, 0%, 94%);
+    font-family: "Poppins", sans-serif;
+}
+.card-body{
+    background-color: hsl(0, 0%, 100%);
+    width:760px;
+    height:588px;
+    padding:3.2rem;
+    border-radius: 30px 30px 100px 30px;
+    margin: auto;
+    position: relative;
+    margin-top: 10vh;
+}
+.card-body div form{
+    display: flex;
+    align-items: center;
+}
+.card-body div form div label{
+    font-size: .7rem;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing:2px;
+    text-transform: uppercase;
+    color: hsl(0, 1%, 44%);
+}
+input{
+    width:145px;
+    height:63px;
+    border:1px solid hsl(0, 0%, 88%);
+    border-radius: 6px;
+    margin-right:1.8rem;
+    font-size: 2rem;
+    font-weight: 700;
+    padding-inline: 1.2rem;
+    box-sizing: border-box;
+}
+input:focus{
+    outline-color: hsl(259, 100%, 65%);
+}
+button{
+    position: absolute;
+    right:3rem;
+    background-color: hsl(259, 100%, 65%);
+    border-radius: 50%;
+    padding:15px;
+    border:none;
+}
+
+hr{
+    width: 76%;
+    border:1px solid hsl(0, 0%, 90%);
+    position: absolute;
+    top:11rem;
+}
+.card-body .display-space{
+    margin-top:6rem;
+    font-weight: 800;
+    letter-spacing:-4px;
+}
+.card-body .display-space h1{
+    font-size: 6rem;
+    font-style: italic;
+    line-height: 6rem;
+}
+.card-body .display-space span{
+    color: hsl(259, 100%, 65%);
+}
+@media(width<=375px){
+    .card-body{
+        background-color: hsl(0, 0%, 100%);
+        width:342px;
+        height:486px;
+        padding:1.8rem;
+    }
+    .input-holder{
+        margin-top: 7px;
+    }
+    input{
+        width:86px;
+        height:54px;
+        margin-right:1rem;
+    }
+    .card-body .display-space{
+        margin-top:8rem;
+        letter-spacing:-2px;
+    }
+    .card-body .display-space h1{
+        font-size: 3.8rem;
+        font-style: italic;
+        line-height: 4rem;
+    }
+    button{
+        right:8rem;
+        top:8.5rem;
+        padding:25px;
+    }
+    button img{
+        width:30px;
+        height: 28px;
+    }
+    hr{
+        width: 85%;
+        
+    }
+}
