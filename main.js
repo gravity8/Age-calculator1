@@ -38,13 +38,13 @@ formControl.addEventListener('submit', (e)=>{
                     break
                 } 
                 else if((month-1)>12){
-                    document.getElementById("monthError").innerHTML=""
+                    document.getElementById("monthError").innerHTML=" "
                     document.getElementById("monthError").style.display="block"
                     break
                 }
                 
                 else if(year>todaysDate.getFullYear()){
-                    document.getElementById("yearError").innerHTML=""
+                    document.getElementById("yearError").innerHTML=" "
                     document.getElementById("yearError").style.display="block"
                     break
                 }
