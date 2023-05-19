@@ -17,20 +17,22 @@ formControl.addEventListener('submit', (e)=>{
         let outputDay = (todaysDate.getDate()-usersDate.getDate())
     
         console.log(usersDate.getMonth()-1)
-        console.log(usersDate.getDate(),maxDay.getDate())
+        console.log(day,maxDay.getDate())
         console.log(todaysDate.getFullYear())
+
         if(day>maxDay.getDate()){
             document.getElementById("dayError").innerHTML="Must be a valid Day"
-            // document.getElementById("dayError").style.display="block"
+            document.getElementById("dayError").style.display="block"
+            
         } 
         if((month-1)>12){
             document.getElementById("monthError").innerHTML="Must be a valid Month"
-            // document.getElementById("monthError").style.display="block"
+            document.getElementById("monthError").style.display="block"
         }
            
         if(year>todaysDate.getFullYear()){
             document.getElementById("yearError").innerHTML="Must be a valid Year"
-            // document.getElementById("yearError").style.display="block"
+            document.getElementById("yearError").style.display="block"
         }
         else{
             document.querySelector(".years").innerHTML= outputYear;
