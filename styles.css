@@ -38,7 +38,7 @@ input{
     border-radius: 7px;
     font-family: "Poppins", sans-serif;
     margin-right:1.8rem;
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-weight: 700;
     padding-inline: 1.2rem;
     box-sizing: border-box;
@@ -50,7 +50,7 @@ input:focus{
 }
 .ErrorMessage{
     display:none;
-    font-size: .8rem;
+    font-size: .7rem;
     font-style: italic;
     color: hsl(0, 100%, 67%);
     margin-top: .3rem;
@@ -138,5 +138,8 @@ hr{
     }
     .ErrorMessage{
         font-size: .5rem;
+    }
+    .error-holder{
+        width:18rem;
     }
 }

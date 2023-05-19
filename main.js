@@ -11,15 +11,11 @@ formControl.addEventListener('submit', (e)=>{
         let todaysDate= new Date()
         let usersDate = new Date(year,month-1,day)
         let maxDay = new Date(year,month,0)
-        console.log(usersDate.getDate())
         
         let outputYear = (todaysDate.getFullYear()-usersDate.getFullYear())
         let outputMonth = ((todaysDate.getMonth()-1)-usersDate.getMonth()+1)
         let outputDay = (todaysDate.getDate()-usersDate.getDate())
-        
-        console.log(usersDate.getMonth())
-        console.log(day,maxDay.getDate())
-        console.log(todaysDate.getFullYear())
+
             if(day>maxDay.getDate()&&(month-1)>12&&year>todaysDate.getFullYear()){
                 document.getElementById("dayError").innerHTML="Must be a valid Day"
                 document.getElementById("dayError").style.display="block"
@@ -28,8 +24,8 @@ formControl.addEventListener('submit', (e)=>{
                 document.getElementById("yearError").innerHTML="Must be a valid Year"
                 document.getElementById("yearError").style.display="block"
             }
-       
-            while(true){
+            else{
+                while(true){
                 if(day>maxDay.getDate()){
                     document.getElementById("dayError").innerHTML="Must be a valid Date"
                     document.getElementById("dayError").style.display="block"
@@ -42,13 +38,13 @@ formControl.addEventListener('submit', (e)=>{
                     break
                 } 
                 else if((month-1)>12){
-                    document.getElementById("monthError").innerHTML="Must be a valid Date"
+                    document.getElementById("monthError").innerHTML=""
                     document.getElementById("monthError").style.display="block"
                     break
                 }
                 
                 else if(year>todaysDate.getFullYear()){
-                    document.getElementById("yearError").innerHTML="Must be a valid Date"
+                    document.getElementById("yearError").innerHTML=""
                     document.getElementById("yearError").style.display="block"
                     break
                 }
@@ -66,6 +62,8 @@ formControl.addEventListener('submit', (e)=>{
                     break
                 }
             }
+            }
+            
             
             
         }
